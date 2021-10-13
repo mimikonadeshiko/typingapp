@@ -3,8 +3,10 @@ import sys
 import time
 import random
 
+#ver 0.1
+
 indata = 0000
-randomdata = "0000"
+randata = "0000"
 txtdata = "hoge"
 
 
@@ -13,26 +15,30 @@ mainfrm.geometry("980x700")
 mainfrm.title("タイピング練習")
 txtbox = tkinter.Entry(width=70)
 txtbox.place(x=200,y=400) 
-indata = txtbox.get
-#def atosyori():
+indata = txtbox.get()
+txtbox1 = tkinter.Entry(width=40)
+txtbox1.place(x=270,y=300)
 
 def kotae():
-    print(randomdata)
-    if  randomdata.strip() == indata :
-        lbl3 = tkinter.Label(text="正解")
+    indata = txtbox1.get()
+    if  randata.strip() == indata :
+        lbl3 = tkinter.Label(text=" 正解 ")
         lbl3.place(x=490,y=300)
+        txtbox1.delete(0, tkinter.END)
+        txtbox.delete(0, tkinter.END)
+
 
     else:
         lbl4 = tkinter.Label(text="不正解")
         lbl4.place(x=490,y=300)
+        txtbox1.delete(0, tkinter.END)
+        txtbox.delete(0, tkinter.END)
 def monndai():
-    global randomdata
+    global randata
     with open("kotae.txt") as f:
         indata = f.readlines()
-    x = random.choice(indata)
-    lbl = tkinter.Label(text=x)
-    lbl.place(x=490,y=200)
-    randomdata = x
+    randata = random.choice(indata)
+    txtbox1.insert(tkinter.END,randata)
 
 def awase():
     kotae()
