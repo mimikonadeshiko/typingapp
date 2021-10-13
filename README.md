@@ -1,5 +1,5 @@
 # インストール
-ダウンロードはcodeの下にあるdownload zipを押すとダウンロードしたzipを開く
+ダウンロードはcodeを押すと出てくるやつにあるdownload zipを押すとダウンロードしたzipを開く
 windowsボタンを押してそのまま"cmd"と入力したらエンター
 黒い画面が出てきたら"cd downloads/typingapp-main/"と"python3 keyboard.py"を実行
 するとmicrosoftstoreが開くのでインストール
